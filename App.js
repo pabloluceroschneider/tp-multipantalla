@@ -1,19 +1,27 @@
+/**
+ * @format
+ */
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
-}
+import {AppRegistry} from 'react-native';
+import {name as appName} from './app.json';
+import AlbumList from './src/components/AlbumList';
+import PhotoList from './src/components/PhotoList';
+import {Router, Scene, Stack} from 'react-native-router-flux';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+// Create a component
+const App = () => (
+  <Router>
+    <Stack key="root">
+      <Scene
+        key="albumList"
+        component={AlbumList}
+        title="Albums"
+        initial={true}
+      />
+      <Scene key="photoList" component={PhotoList} title="Photos" />
+    </Stack>
+  </Router>
+);
+
+export default App;
