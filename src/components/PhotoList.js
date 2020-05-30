@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { View, FlatList } from "react-native";
 import axios from "axios";
 import PhotoDetail from "./PhotoDetail";
-import Loader from './Loader';
+import Loader from "./Loader";
 
 const PhotoList = (props) => {
   const { albumId } = props;
@@ -19,9 +19,7 @@ const PhotoList = (props) => {
   }, []);
 
   if (!photos) {
-    return (
-      <Loader size="large" />
-    );
+    return <Loader size="large" />;
   }
 
   return (
