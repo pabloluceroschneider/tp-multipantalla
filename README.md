@@ -1,6 +1,6 @@
 # Trabajo Práctico de Desarrollo Multipantalla - React-Native
 
-## Integrantes:
+## Integrantes
 - Conti Bruno
 - Lucero Pablo
 - Peralta Agustín
