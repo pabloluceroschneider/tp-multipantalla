@@ -36,6 +36,7 @@ const PhotoList = (props) => {
             key={item.title}
             title={item.title}
             imageUrl={`https://farm${item.farm}.staticflickr.com/${item.server}/${item.id}_${item.secret}.jpg`}
+            photoId={item.id}
           />
         )}
         keyExtractor={(item) => item.id}
