@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import axios from 'axios';
 import AlbumDetail from './AlbumDetail';
 import {FlatList} from 'react-native';
+import Loader from './Loader';
+
 
 const AlbumList = (props) => {
 	const [ photoset, setPhotoset ] = useState(null);
@@ -15,7 +17,7 @@ const AlbumList = (props) => {
 	},[]);
 
 	return !photoset ? (
-		<Text>Loading...</Text>
+		<Loader />
 	) : (
 		<View style={{ flex: 1 }}>
 			<FlatList
