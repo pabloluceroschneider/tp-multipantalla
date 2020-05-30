@@ -6,7 +6,6 @@ import Loader from './Loader';
 const PhotoComments = (props) => {
 	const { photoId } = props;
   const [ comments, setComments ] = useState(null);
-  const { comment, realname, content } = styles;
 
 	useEffect(() => {
 		const fetchcomments = async () => {
@@ -19,13 +18,13 @@ const PhotoComments = (props) => {
 	}, []);
 
 	return (
-		<View>
+		<View style={styles.comments}>
 			{comments ? (
 				comments.map((c) => {
 					return (
-						<View key={c.id} style={comment}>
-              <Text style={realname}>{c.realname}</Text>
-							<Text style={content}>{c._content}</Text>
+						<View key={c.id}>
+              <Text style={styles.realname}>{c.realname}</Text>
+							<Text style={styles.content}>{c._content}</Text>
 						</View>
 					);
 				})
@@ -37,7 +36,7 @@ const PhotoComments = (props) => {
 };
 
 const styles = {
-  comment:{
+  comments:{
     display:'block'
   },
   realname:{
