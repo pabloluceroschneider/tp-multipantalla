@@ -18,11 +18,9 @@ const PhotoList = (props) => {
     fetchphotos();
   }, []);
 
-  console.log(photos);
-
   if (!photos) {
     return (
-      <Loader />
+      <Loader size="large" />
     );
   }
 

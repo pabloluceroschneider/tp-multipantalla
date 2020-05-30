@@ -1,9 +1,10 @@
 import React from "react";
 import { ActivityIndicator, Colors } from 'react-native-paper';
 
-const Loader = () => {
+const Loader = props => {
+  const { size } = props;
     return (
-      <ActivityIndicator style={styles} animating={true} size="large" color={Colors.blue500}/>
+      <ActivityIndicator style={styles} animating={true} size={size} color={Colors.blue500}/>
     )
 }
 
