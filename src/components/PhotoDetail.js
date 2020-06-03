@@ -1,72 +1,94 @@
-import React from 'react';
-import { Text, View, Image, Linking } from 'react-native';
-import Card from './Card';
-import CardSection from './CardSection';
-import Button from './Button';
+import React, { useState } from "react";
+import { Text, View, Image, Linking } from "react-native";
+import Card from "./Card";
+import CardSection from "./CardSection";
+import Button from "./Button";
+import PhotoComments from "./PhotoComment";
 
-const PhotoDetail = ({ title, imageUrl }) => {
+const PhotoDetail = ({ title, imageUrl, photoId }) => {
+  const [showComment, setShowComment] = useState(false);
   const {
     thumbnailStyle,
     headerContentStyle,
     thumbnailContainerStyle,
     headerTextStyle,
-    imageStyle
+    imageStyle,
+    titleSectionProps,
+    imageSectionProps,
+    buttonsSectionProps,
+    commentsSectionProps
   } = styles;
+
 
   return (
     <Card>
-      <CardSection>
+      <CardSection {...titleSectionProps}>
         <View style={thumbnailContainerStyle}>
-          <Image
-            style={thumbnailStyle}
-            source={{ uri: imageUrl }}
-          />
+          <Image style={thumbnailStyle} source={{ uri: imageUrl }} />
         </View>
         <View style={headerContentStyle}>
           <Text style={headerTextStyle}>{title}</Text>
-          
         </View>
       </CardSection>
 
-      <CardSection>
-        <Image
-          style={imageStyle}
-          source={{ uri: imageUrl }}
-        />
+      <CardSection {...imageSectionProps}>
+        <Image style={imageStyle} source={{ uri: imageUrl }} />
       </CardSection>
 
-      <CardSection>
-        <Button onPress={() => Linking.openURL(imageUrl)}>
-          See Now!
+      <CardSection {...buttonsSectionProps}>
+        <Button onPress={() => Linking.openURL(imageUrl)}>See Now!</Button>
+        <Button onPress={() => setShowComment(!showComment)}>
+          Comments
         </Button>
       </CardSection>
+
+      {showComment ? (
+        <CardSection {...commentsSectionProps}>
+          <PhotoComments photoId={photoId} />
+        </CardSection>
+      ) : null}
     </Card>
   );
 };
 
 const styles = {
   headerContentStyle: {
-    flexDirection: 'column',
-    justifyContent: 'space-around'
+    flexDirection: "column",
+    justifyContent: "space-around",
   },
   headerTextStyle: {
-    fontSize: 18
+    fontSize: 18,
+    fontWeight: "bold",
   },
   thumbnailStyle: {
     height: 50,
-    width: 50
+    width: 50,
   },
   thumbnailContainerStyle: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     marginLeft: 10,
-    marginRight: 10
+    marginRight: 10,
   },
   imageStyle: {
     height: 300,
     flex: 1,
-    width: null
-  }
+    width: null,
+  },
+  titleSectionProps : { 
+    justifyContent:"flex-start", 
+    backgroundColor: "#EAF2F8" 
+  },
+  imageSectionProps :{ 
+    justifyContent:"center", 
+    backgroundColor: "#EAF2F8" 
+  },
+  buttonsSectionProps : { 
+    backgroundColor: "#EAF2F8" 
+  },
+  commentsSectionProps : { 
+    backgroundColor: "#EAF2F8" 
+  },
 };
 
 export default PhotoDetail;

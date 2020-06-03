@@ -17,7 +17,7 @@ const AlbumList = (props) => {
 	},[]);
 
 	return !photoset ? (
-		<Loader />
+		<Loader size="large" />
 	) : (
 		<View style={{ flex: 1 }}>
 			<FlatList
