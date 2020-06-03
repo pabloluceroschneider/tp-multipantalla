@@ -3,21 +3,23 @@ import { View } from 'react-native';
 
 const CardSection = (props) => {
   return (
-    <View style={styles.containerStyle}>
+    <View style={styles(props).containerStyle}>
       {props.children}
     </View>
   );
 };
 
-const styles = {
+const styles = (props) => {
+  return {
   containerStyle: {
     borderBottomWidth: 1,
     padding: 5,
-    backgroundColor: '#fff',
+    backgroundColor: props.backgroundColor,
+    justifyContent: props.justifyContent,
     flexDirection: 'row',
     borderColor: '#ddd',
     position: 'relative'
-  }
+  }}
 };
 
 export default CardSection;

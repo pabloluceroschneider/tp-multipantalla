@@ -13,11 +13,14 @@ const PhotoDetail = ({ title, imageUrl, photoId }) => {
     thumbnailContainerStyle,
     headerTextStyle,
     imageStyle,
+    titleSectionProps,
+    imageSectionProps
   } = styles;
+
 
   return (
     <Card>
-      <CardSection>
+      <CardSection {...titleSectionProps}>
         <View style={thumbnailContainerStyle}>
           <Image style={thumbnailStyle} source={{ uri: imageUrl }} />
         </View>
@@ -26,7 +29,7 @@ const PhotoDetail = ({ title, imageUrl, photoId }) => {
         </View>
       </CardSection>
 
-      <CardSection>
+      <CardSection {...imageSectionProps}>
         <Image style={imageStyle} source={{ uri: imageUrl }} />
       </CardSection>
 
@@ -69,6 +72,14 @@ const styles = {
     flex: 1,
     width: null,
   },
+  titleSectionProps : { 
+    justifyContent:"flex-start", 
+    backgroundColor: "yellow" 
+  },
+  imageSectionProps :{ 
+    justifyContent:"center", 
+    backgroundColor: "red" 
+  }
 };
 
 export default PhotoDetail;
