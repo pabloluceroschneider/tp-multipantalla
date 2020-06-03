@@ -37,10 +37,10 @@ const PhotoComments = (props) => {
 
 const styles = {
   comments: {
-    display: "block",
+    display: "flex",
   },
   realname: {
-    display: "block",
+    display: "flex",
     fontWeight: "bold",
   },
   content: {

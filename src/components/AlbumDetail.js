@@ -8,17 +8,15 @@ import { Actions } from 'react-native-router-flux';
 const AlbumDetail = ({ title, albumId }) => {
   const {
     headerContentStyle,
-    
     headerTextStyle,
     imageStyle
   } = styles;
 
   return (
     <Card>
-      <CardSection>
+      <CardSection style={{alignItems:'center'}}>
         <View style={headerContentStyle}>
           <Text style={headerTextStyle}>{title}</Text>
-          
         </View>
       </CardSection>
 
@@ -34,10 +32,12 @@ const AlbumDetail = ({ title, albumId }) => {
 const styles = {
   headerContentStyle: {
     flexDirection: 'column',
-    justifyContent: 'space-around'
+    justifyContent: 'center'
   },
   headerTextStyle: {
-    fontSize: 18
+    fontSize: 18,
+    textAlign:'center',
+    
   },
   thumbnailStyle: {
     height: 50,
