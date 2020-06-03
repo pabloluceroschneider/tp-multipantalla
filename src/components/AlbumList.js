@@ -22,7 +22,11 @@ const AlbumList = (props) => {
 		<View style={{ flex: 1 }}>
 			<FlatList
 				data={photoset}
-				renderItem={({ item }) =>  <AlbumDetail key={item.id} title={item.title._content} albumId={item.id} />}
+				renderItem={({ item }) =>  <AlbumDetail 
+													navigation={props.navigation}
+													key={item.id} 
+													title={item.title._content} 
+													albumId={item.id} />}
 				keyExtractor={(item) => item.id}
 			/>
 		</View>
