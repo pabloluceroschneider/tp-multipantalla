@@ -6,17 +6,13 @@ import Button from "./Button";
 import { Actions } from "react-native-router-flux";
 import { Icon } from "react-native-elements";
 
-const AlbumDetail = ({ title, albumId }) => {
-  const { headerContentStyle, headerTextStyle, imageStyle } = styles;
-  const titleSectionProps = {
-    justifyContent: "center",
-    backgroundColor: "#2471A3",
-    
-  };
-  const contentSectionProps = {
-    justifyContent: "center",
-    backgroundColor: "#EAF2F8",
-  };
+const AlbumDetail = ({ title, albumId, navigation }) => {
+  const {
+    headerContentStyle,
+    headerTextStyle,
+    contentSectionProps,
+    titleSectionProps    
+  } = styles;
 
   return (
     <Card>
@@ -26,9 +22,9 @@ const AlbumDetail = ({ title, albumId }) => {
         </View>
       </CardSection>
 
-      <CardSection {...contentSectionProps}>
-        <Button onPress={() => Actions.photoList({ albumId: albumId })}>
-          <Icon name="camera" type="font-awesome" color='#2471A3' />
+      <CardSection>
+        <Button onPress={() => navigation.navigate('photoList', {albumId: albumId})}>
+        <Icon name="camera" type="font-awesome" color='#2471A3' />
         </Button>
       </CardSection>
     </Card>
@@ -60,6 +56,15 @@ const styles = {
     flex: 1,
     width: null,
   },
+  contentSectionProps : {
+    justifyContent: "center",
+    backgroundColor: "#EAF2F8",
+  },
+  titleSectionProps : {
+    justifyContent: "center",
+    backgroundColor: "#2471A3",
+    
+  }
 };
 
 export default AlbumDetail;
