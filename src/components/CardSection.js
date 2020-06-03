@@ -18,7 +18,7 @@ const styles = (props) => {
     justifyContent: props.justifyContent,
     flexDirection: 'row',
     borderColor: '#ddd',
-    position: 'relative'
+    position: 'relative',
   }}
 };
 

@@ -14,7 +14,9 @@ const PhotoDetail = ({ title, imageUrl, photoId }) => {
     headerTextStyle,
     imageStyle,
     titleSectionProps,
-    imageSectionProps
+    imageSectionProps,
+    buttonsSectionProps,
+    commentsSectionProps
   } = styles;
 
 
@@ -33,7 +35,7 @@ const PhotoDetail = ({ title, imageUrl, photoId }) => {
         <Image style={imageStyle} source={{ uri: imageUrl }} />
       </CardSection>
 
-      <CardSection>
+      <CardSection {...buttonsSectionProps}>
         <Button onPress={() => Linking.openURL(imageUrl)}>See Now!</Button>
         <Button onPress={() => setShowComment(!showComment)}>
           Comments
@@ -41,7 +43,7 @@ const PhotoDetail = ({ title, imageUrl, photoId }) => {
       </CardSection>
 
       {showComment ? (
-        <CardSection>
+        <CardSection {...commentsSectionProps}>
           <PhotoComments photoId={photoId} />
         </CardSection>
       ) : null}
@@ -56,6 +58,7 @@ const styles = {
   },
   headerTextStyle: {
     fontSize: 18,
+    fontWeight: "bold",
   },
   thumbnailStyle: {
     height: 50,
@@ -74,12 +77,18 @@ const styles = {
   },
   titleSectionProps : { 
     justifyContent:"flex-start", 
-    backgroundColor: "yellow" 
+    backgroundColor: "#EAF2F8" 
   },
   imageSectionProps :{ 
     justifyContent:"center", 
-    backgroundColor: "red" 
-  }
+    backgroundColor: "#EAF2F8" 
+  },
+  buttonsSectionProps : { 
+    backgroundColor: "#EAF2F8" 
+  },
+  commentsSectionProps : { 
+    backgroundColor: "#EAF2F8" 
+  },
 };
 
 export default PhotoDetail;
