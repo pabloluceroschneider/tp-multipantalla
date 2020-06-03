@@ -15,7 +15,7 @@ const Stack = createStackNavigator();
 // Create a component
 const App = () => (
   <NavigationContainer>
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName="albumList">
       <Stack.Screen
         name="albumList"
         component={AlbumList}
