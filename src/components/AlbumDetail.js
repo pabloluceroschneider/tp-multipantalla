@@ -12,10 +12,11 @@ const AlbumDetail = ({ title, albumId }) => {
     headerTextStyle,
     imageStyle
   } = styles;
+  const cardSectionProps = { justifyContent:"center", backgroundColor: "#2471A3" }
 
   return (
     <Card>
-      <CardSection>
+      <CardSection {...cardSectionProps}>
         <View style={headerContentStyle}>
           <Text style={headerTextStyle}>{title}</Text>
           
@@ -34,7 +35,7 @@ const AlbumDetail = ({ title, albumId }) => {
 const styles = {
   headerContentStyle: {
     flexDirection: 'column',
-    justifyContent: 'space-around'
+    textAlign: 'center'
   },
   headerTextStyle: {
     fontSize: 18
