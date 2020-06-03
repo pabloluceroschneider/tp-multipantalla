@@ -22,7 +22,7 @@ const PhotoComments = (props) => {
       {comments ? (
         comments.map((c) => {
           return (
-            <View key={c.id}>
+            <View style={styles.box} key={c.id}>
               <Text style={styles.realname}>{c.realname}</Text>
               <Text style={styles.content}>{c._content}</Text>
             </View>
@@ -38,6 +38,15 @@ const PhotoComments = (props) => {
 const styles = {
   comments: {
     display: "flex",
+    width: "100%"
+  },
+  box:{
+    border: "0.5px solid #E5E7E9",
+    backgroundColor: "#FFF",
+    borderRadius: 5,
+    margin: "2%",
+    padding: "2%"
+
   },
   realname: {
     display: "flex",
