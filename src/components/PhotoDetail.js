@@ -38,7 +38,7 @@ const PhotoDetail = ({ title, imageUrl, photoId }) => {
       <CardSection {...buttonsSectionProps}>
         <Button onPress={() => Linking.openURL(imageUrl)}>See Now!</Button>
         <Button onPress={() => setShowComment(!showComment)}>
-          Comments
+          { !showComment ? "Show": "Hide"} comments
         </Button>
       </CardSection>
 

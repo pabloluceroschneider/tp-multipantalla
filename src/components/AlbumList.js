@@ -19,7 +19,7 @@ const AlbumList = (props) => {
 	return !photoset ? (
 		<Loader size="large" />
 	) : (
-		<View style={{ flex: 1 }}>
+		<View style={styles}>
 			<FlatList
 				data={photoset}
 				renderItem={({ item }) =>  <AlbumDetail key={item.id} title={item.title._content} albumId={item.id} />}
@@ -28,5 +28,13 @@ const AlbumList = (props) => {
 		</View>
 	);
 };
+
+const styles = {
+	flex: 1,
+	marginTop: "1rem",
+	marginRight: "1rem",
+	marginBottom: "5rem",
+	marginLeft: "1rem"
+}
 
 export default AlbumList;
