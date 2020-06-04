@@ -36,13 +36,19 @@ const PhotoDetail = ({ title, imageUrl, photoId }) => {
       </CardSection>
 
       <CardSection {...buttonsSectionProps}>
-        <Button onPress={() => Linking.openURL(imageUrl)}>See Now!</Button>
+        <Button onPress={() => Linking.openURL(imageUrl)}>
+          <Text>
+            See Now!  
+          </Text>
+        </Button>
         <Button onPress={() => setShowComment(!showComment)}>
-          { !showComment ? "Show": "Hide"} comments
+          <Text>
+            Comments 
+          </Text>
         </Button>
       </CardSection>
 
-      {showComment ? (
+      {!!showComment ? (
         <CardSection {...commentsSectionProps}>
           <PhotoComments photoId={photoId} />
         </CardSection>

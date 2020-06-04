@@ -17,9 +17,11 @@ const AlbumList = (props) => {
 	},[]);
 
 	return !photoset ? (
-		<Loader size="large" />
+		<View style={styles.loader}>
+			<Loader size="large" />
+		</View>
 	) : (
-		<View style={styles}>
+		<View style={styles.albumdetail}>
 			<FlatList
 				data={photoset}
 				renderItem={({ item }) =>  <AlbumDetail 
@@ -34,11 +36,17 @@ const AlbumList = (props) => {
 };
 
 const styles = {
-	flex: 1,
-	marginTop: "1rem",
-	marginRight: "1rem",
-	marginBottom: "5rem",
-	marginLeft: "1rem"
+	albumdetail:{
+		flex: 1,
+		marginTop: "1rem",
+		marginRight: "1rem",
+		marginBottom: "5rem",
+		marginLeft: "1rem"
+	},
+	loader:{
+		flex: 1,
+		justifyContent:"center"
+	}
 }
 
 export default AlbumList;

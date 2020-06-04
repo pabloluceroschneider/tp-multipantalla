@@ -19,7 +19,11 @@ const PhotoList = (props) => {
   }, []);
 
   if (!photos) {
-    return <Loader size="large" />;
+    return (
+      <View style={styles.loader}>
+        <Loader size="large" />
+      </View>
+    ) 
   }
 
   return (
@@ -39,5 +43,12 @@ const PhotoList = (props) => {
     </View>
   );
 };
+
+const styles = {
+  loader:{
+		flex: 1,
+		justifyContent:"center"
+	}
+}
 
 export default PhotoList;

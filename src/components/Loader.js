@@ -10,7 +10,6 @@ const Loader = props => {
 
 const styles = {
     alignSelf: 'center',
-    marginTop: '50%'
 }
 
 export default Loader;
