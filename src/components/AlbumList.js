@@ -38,10 +38,10 @@ const AlbumList = (props) => {
 const styles = {
 	albumdetail:{
 		flex: 1,
-		marginTop: "1rem",
-		marginRight: "1rem",
-		marginBottom: "5rem",
-		marginLeft: "1rem"
+		marginTop: "1%",
+		marginRight: "1%",
+		marginBottom: "5%",
+		marginLeft: "1%"
 	},
 	loader:{
 		flex: 1,

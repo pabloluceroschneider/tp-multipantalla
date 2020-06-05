@@ -41,7 +41,9 @@ const styles = {
     width: "100%"
   },
   box:{
-    border: "0.5px solid #E5E7E9",
+    borderColor: "#E5E7E9",
+    borderWidth: 0.5,
+    borderStyle: "solid",
     backgroundColor: "#FFF",
     borderRadius: 5,
     margin: "2%",

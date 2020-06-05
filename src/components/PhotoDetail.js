@@ -43,7 +43,7 @@ const PhotoDetail = ({ title, imageUrl, photoId }) => {
         </Button>
         <Button onPress={() => setShowComment(!showComment)}>
           <Text>
-            Comments 
+            {!showComment ? "Show ":"Hide "}comments 
           </Text>
         </Button>
       </CardSection>
@@ -83,7 +83,7 @@ const styles = {
   },
   titleSectionProps : { 
     justifyContent:"flex-start", 
-    backgroundColor: "#EAF2F8" 
+    backgroundColor: "#2471A3" ,
   },
   imageSectionProps :{ 
     justifyContent:"center", 

@@ -24,7 +24,7 @@ const AlbumDetail = ({ title, albumId, navigation }) => {
 
       <CardSection>
         <Button onPress={() => navigation.navigate('photoList', {albumId: albumId})}>
-        <Icon name="camera" type="font-awesome" color='#2471A3' />
+          See Now!
         </Button>
       </CardSection>
     </Card>
